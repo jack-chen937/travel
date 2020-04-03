@@ -52,7 +52,7 @@ export default {
 }
 
 .swiper-img {
-  height: 2rem;
+  height: 2.5rem;
   width: 100%;
 }
 </style>
