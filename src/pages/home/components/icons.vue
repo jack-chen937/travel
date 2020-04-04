@@ -20,7 +20,7 @@ export default {
     return {
       swiperOptions: {
         pagination: ".swiper-pagination",
-        autoplay: false
+        autoplay: false 
       },
       iconsList: [
         {
