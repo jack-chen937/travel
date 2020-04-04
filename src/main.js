@@ -9,6 +9,9 @@ import './assets/styles/reset.css'// 重置css
 import './assets/styles/border.css'// 解决手机端1px边框问题
 import './assets/styles/iconfont.css'
 import 'swiper/css/swiper.css'
+import { Swipe, SwipeItem } from 'mint-ui';
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 
 Vue.config.productionTip = false
