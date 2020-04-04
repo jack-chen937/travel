@@ -12,6 +12,10 @@ import HomeHeader from "./components/header";
 import HomeSwiper from "./components/swiper";
 import HomeIcons from "./components/icons";
 import HomeRecommend from "./components/recommend";
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
 export default {
   name: "home",
