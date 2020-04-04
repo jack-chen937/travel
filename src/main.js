@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import mintUI from 'mint'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import fastclick from 'fastclick'// 解决手机点击延迟300ms问题
 import './assets/styles/reset.css'// 重置css
