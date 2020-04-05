@@ -20,7 +20,8 @@ export default {
     return {
       swiperOptions: {
         pagination: ".swiper-pagination",
-        autoplay: false 
+        stopOnLastSlide: false /* 触摸滑动后是否继续轮播 */,
+        disableOnInteraction: false
       },
       iconsList: [
         {
