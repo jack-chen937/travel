@@ -112,6 +112,8 @@ export default {
 }
 
 .icons {
+  background-color: #fff;
+  margin-bottom: 1%;
   margin-top: 0;
   overflow: hidden;
   height: 0;
