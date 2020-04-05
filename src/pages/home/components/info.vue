@@ -6,8 +6,8 @@
       </div>
     </div>
     <ul>
-      <li class="content">
-        <div class="info-list" v-for="item in infoList" :key="item.id">
+      <li class="content" v-for="item in infoList" :key="item.id">
+        <div class="info-list" >
           <img class="content-left" :src="item.imgurl" alt />
           <div class="content-right">
             <div>
@@ -31,28 +31,12 @@
 <script>
 export default {
   name: "HomeInfo",
-  data() {
-    return {
-      infoList: [
-        {
-          id: "0001",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/1504/b9/b93e142713e3d68f.water.jpg_200x200_22ecfe51.jpg",
-          place: "羊狮慕风景区",
-          goodrate: "98%",
-          comments: "221",
-          price: "338",
-          address: "安福县"
-        }
-      ]
-    };
-  }
+props:{
+    infoList:Array
+}
 };
 </script>
 <style lang="stylus" scoped>
-.info {
-  padding-bottom: 0.2rem;
-}
 
 .like {
   background-color: #fff;
