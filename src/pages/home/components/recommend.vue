@@ -1,6 +1,6 @@
 <template>
   <div class="swiper">
-    <ul :options="swiperOptions" class="swiper-list">
+    <ul  class="swiper-list">
       <li class="swiper-li" v-for="item in recommendList" :key="item.id">
         <img class="swiper-img" :src="item.imgurl" />
         <div>{{item.title}}</div>
