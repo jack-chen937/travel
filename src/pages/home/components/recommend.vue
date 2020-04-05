@@ -13,7 +13,7 @@
       <ul class="swiper-list">
         <li class="swiper-li" v-for="item in recommendList" :key="item.id">
           <img class="swiper-img" :src="item.imgurl" />
-          <div>{{item.title}}</div>
+          <div class="img-title">{{item.title}}</div>
           <div>
             ￥
             <span class="swiper-price">{{item.price}}</span>起
@@ -28,46 +28,8 @@
 <script>
 export default {
   name: "HomeRommend",
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "0001",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/201403/10/b27ead9b352d1ab09e0d86605defcf30.jpg_250x250_165f4014.jpg",
-          title: "安抚武功山",
-          price: "30"
-        },
-        {
-          id: "0002",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/201309/27/661acb22614eae2bc8d65eac.jpg_250x250_ed667de7.jpg",
-          title: "婺源",
-          price: "60"
-        },
-        {
-          id: "0003",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/201305/23/06349f279f6be2d4c8d65eac.jpg_200x200_085bb722.jpg",
-          title: "井冈山",
-          price: "90"
-        },
-        {
-          id: "0004",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/201305/23/06349f279f6be2d4c8d65eac.jpg_200x200_085bb722.jpg",
-          title: "井冈山",
-          price: "90"
-        },
-        {
-          id: "0005",
-          imgurl:
-            "https://imgs.qunarzz.com/sight/p0/201305/23/06349f279f6be2d4c8d65eac.jpg_200x200_085bb722.jpg",
-          title: "井冈山",
-          price: "90"
-        }
-      ]
-    };
+  props: {
+    recommendList: Array
   }
 };
 </script>
@@ -124,8 +86,12 @@ export default {
 }
 
 .swiper-img {
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.img-title {
+  margin-top: 0.1rem;
 }
 
 .swiper-price {
