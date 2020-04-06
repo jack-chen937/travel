@@ -56,7 +56,8 @@ export default {
   .header-right {
     color: white;
     float: right;
-    width: 1.24rem;
+    padding: 0 0.1rem;
+    min-width: 1.04rem;
     text-align: center;
   }
 }
