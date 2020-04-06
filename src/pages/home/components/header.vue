@@ -6,18 +6,18 @@
     <div class="header-input">
       <span class="iconfont">&#xe632;</span> 输入城市/游玩/景点
     </div>
-    <div class="header-right">
+    <router-link class="header-right" to="/city">
       {{this.city}}
       <span class="iconfont arrow-icon">&#xe695;</span>
-    </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: "HomeHeader",
-  props:{
-    city:String
+  props: {
+    city: String
   }
 };
 </script>
@@ -57,6 +57,7 @@ export default {
   }
 
   .header-right {
+    color: white;
     float: right;
     width: 1.24rem;
     text-align: center;

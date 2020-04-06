@@ -13,7 +13,7 @@
             <div>
               <div class="top">{{item.place}}</div>
               <div class="middle">
-                <div class="goodrate">{{item.goodrate}}</div>
+                <div class="goodrate">好评率{{item.goodrate}}</div>
                 <div class="comment">{{item.comments}}条评论</div>
               </div>
               <div class="bottom">
