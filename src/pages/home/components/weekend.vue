@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: "HomeWeekend",
-  props:{
-      weekList:Array
+  name: 'HomeWeekend',
+  props: {
+    weekList: Array
   }
-  }
+}
 </script>
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
