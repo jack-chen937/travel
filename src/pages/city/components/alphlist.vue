@@ -1,21 +1,18 @@
 <template>
   <div>
     <ul class="list">
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
+      <li v-for="(item,key) in cities" :key="key">{{key}}</li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name:'alphlist',
+  props:{
+    cities:Object
+  }
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -33,6 +30,6 @@ export default {};
 li {
   height: 0.4rem;
   line-height: 0.4rem;
-  color: #666;
+  color: lightgreen ;
 }
 </style>
