@@ -16,53 +16,53 @@
 
 <script>
 export default {
-  name: "alphlist",
+  name: 'alphlist',
   props: {
     cities: Object
   },
   computed: {
-    letters() {
-      const letters = [];
+    letters () {
+      const letters = []
       for (let i in this.cities) {
-        letters.push(i);
+        letters.push(i)
       }
-      return letters;
+      return letters
     }
   },
-  data() {
+  data () {
     return {
       Touchflag: false,
       startY: 0,
       timer: null
-    };
+    }
   },
-  updated() {
-    //侧边字母A到search组件底部的距离==72px
+  updated () {
+    // 侧边字母A到search组件底部的距离==72px
     // console.log(startY);//72
-    this.startY = this.$refs["A"][0].offsetTop;
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
-    handleclick(e) {
-      this.$emit("change", e.target.innerText);
+    handleclick (e) {
+      this.$emit('change', e.target.innerText)
     },
-    handlestart() {
-      this.Touchflag = true;
+    handlestart () {
+      this.Touchflag = true
     },
-    handlemove(e) {
+    handlemove (e) {
       if (this.Touchflag) {
-        const touchY = e.touches[0].clientY - 89; //89为顶部高度
-        const index = Math.floor((touchY - this.startY) / 20);
-        console.log(index);
+        const touchY = e.touches[0].clientY - 89 // 89为顶部高度
+        const index = Math.floor((touchY - this.startY) / 20)
+        console.log(index)
         if (index >= 0 && index < 23) {
-          this.$emit("change", this.letters[index]);
+          this.$emit('change', this.letters[index])
         }
       }
     },
-    handlend() {
-      this.Touchflag = false;
+    handlend () {
+      this.Touchflag = false
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>

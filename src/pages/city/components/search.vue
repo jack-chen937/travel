@@ -5,8 +5,7 @@
     </div>
     <div class="search-content" v-show="keywords" ref="search">
       <ul>
-        <li class="search-list border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
-
+        <li class="search-list border-bottom" @click="selectCity(item.name)" v-for="item in list" :key="item.id">{{item.name}}</li>
         <li class="search-list border-bottom" v-show="!list.length">查询无果</li>
       </ul>
     </div>
@@ -14,38 +13,45 @@
 </template>
 
 <script>
-import Bscroll from "better-scroll";
+import Bscroll from 'better-scroll'
 export default {
-  name: "CitySearch",
+  name: 'CitySearch',
   props: {
     cities: Object
   },
-  data() {
+  data () {
     return {
-      keywords: "",
+      keywords: '',
       list: []
-    };
+    }
   },
-  mounted() {
-    this.scroll = new Bscroll(this.$refs.search);
+  methods: {
+    selectCity (city) {
+      // 利用vuex去改变store中的参数，让全局city一样
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search)
   },
   watch: {
-    keywords() {
-      const result = [];
+    keywords () {
+      const result = []
       for (let item in this.cities) {
         this.cities[item].forEach(value => {
           if (
             value.name.indexOf(this.keywords) > -1 ||
             value.spell.indexOf(this.keywords) > -1
           ) {
-            result.push(value);
+            result.push(value)
           }
-        });
+        })
       }
-      this.list = result;
+      this.list = result
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
