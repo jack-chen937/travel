@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div ref="wrapper">
+    <div>
       <home-header :city="city"></home-header>
       <home-swiper :swiperList="swiperList"></home-swiper>
       <home-icons :iconsList="iconsList"></home-icons>
       <home-recommend :recommendList="recommendList"></home-recommend>
       <home-info :infoList="infoList"></home-info>
       <home-weekend :weekList="weekList"></home-weekend>
+    </div>
   </div>
 </template>
 
@@ -28,9 +30,6 @@ export default {
     HomeRecommend,
     HomeInfo,
     HomeWeekend
-  },
-  mounted() {
-    this.scroll = new Bscroll(this.$refs.wrapper);
   },
   data() {
     return {
@@ -61,6 +60,7 @@ export default {
     }
   },
   mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper);
     this.getHomeInfo();
   }
 };
