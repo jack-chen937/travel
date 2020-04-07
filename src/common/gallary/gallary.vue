@@ -1,16 +1,85 @@
 <template>
-    <div>
-        gallary
+  <div class="gallary" @click="close">
+    <div class="container">
+      <swiper :options="swiperOptions">
+        <swiper-slide v-for="(item,index) in swiperList" :key="index">
+          <img class="swiper-img" :src="item" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:'commonGallary'
-    
-}
+  name: "commonGallary",
+  props: {
+    gallaryflag: "",
+    swiperList: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
+  },
+  data() {
+    return {
+      swiperOptions: {
+        pagination: ".swiper-pagination",
+        paginationType: "fraction",
+        observeParents: true,
+        observer: true,
+        autoplay: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false,
+        paginationClickable: true,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true
+      }
+    };
+  },
+  methods: {
+    close() {
+      this.$emit("close");
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  }
+};
 </script>
 
 <style lang="stylus" scoped>
-    
+.gallary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  z-index: 99;
+}
+
+.container {
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+  // 高度容积整屏的页面大小
+  padding-bottom: 100%;
+}
+
+.swiper-img {
+  width: 100%;
+}
+
+.swiper-pagination {
+  color: #fff;
+}
 </style>
