@@ -6,8 +6,14 @@
       </div>
     </div>
     <ul>
-      <li class="content" v-for="item in infoList" :key="item.id">
-        <div class="info-list" >
+      <router-link
+        tag="li"
+        class="content"
+        v-for="item in infoList"
+        :key="item.id"
+        :to="'/detail/'+item.id"
+      >
+        <div class="info-list">
           <img class="content-left" :src="item.imgurl" alt />
           <div class="content-right">
             <div>
@@ -23,7 +29,7 @@
             </div>
           </div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -31,13 +37,12 @@
 <script>
 export default {
   name: "HomeInfo",
-props:{
-    infoList:Array
-}
+  props: {
+    infoList: Array
+  }
 };
 </script>
 <style lang="stylus" scoped>
-
 .like {
   background-color: #fff;
   height: 0.64rem;
