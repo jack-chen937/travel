@@ -3,7 +3,7 @@
     <div @click="open">
       <img
         class="detail-img"
-        src="//img1.qunarzz.com/sight/p0/201309/27/661acb22614eae2bc8d65eac.jpg_600x330_2200e5bf.jpg"
+        :src="bannerImg"
         alt
       />
 
@@ -15,31 +15,29 @@
       </div>
     </div>
     <common-gallary
-      :swiperList="swiperList"
+      :gallaryImgs="gallaryImgs"
       :gallaryflag="gallaryflag"
       @close="closegallary"
       v-show="gallaryflag"
     ></common-gallary>
-    <banner></banner>
+
   </div>
 </template>
 
 <script>
 import commonGallary from "../../../common/gallary/gallary";
-import Banner from "./banner";
 export default {
   name: "detailHeader",
+  props:{
+    bannerImg:String,
+    gallaryImgs:Array
+  },
   components: {
     commonGallary,
-    Banner
   },
   data() {
     return {
       gallaryflag: false,
-      swiperList: [
-        "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/fusion/20192/02cf368951bd5ecfa6569097ab378302.jpg",
-        "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/fusion/20192/0faaeab5fc1bae97d8c18d76c96b3a13.jpg"
-      ]
     };
   },
   methods: {

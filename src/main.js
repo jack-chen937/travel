@@ -5,9 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import fastclick from 'fastclick'// 解决手机点击延迟300ms问题
-import './assets/styles/reset.css'// 重置css
-import './assets/styles/border.css'// 解决手机端1px边框问题
+import fastclick from 'fastclick' // 解决手机点击延迟300ms问题
+import './assets/styles/reset.css' // 重置css
+import './assets/styles/border.css' // 解决手机端1px边框问题
 import './assets/styles/iconfont.css'
 import 'swiper/css/swiper.css'
 
@@ -19,6 +19,10 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
+
+

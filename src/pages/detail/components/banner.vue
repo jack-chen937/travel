@@ -40,16 +40,16 @@ export default {
   },
   activated() {
     window.addEventListener("scroll", this.handleScoll);
+  },
+  deactivated() {
+    //解绑全局事件
+    window.removeEventListener("scroll", this.handleScoll);
   }
 };
 </script>
 
 <style lang='stylus' scoped>
 @import '~styles/varibles.styl';
-
-.banner {
-  height: 50rem;
-}
 
 .header {
   position: fixed;

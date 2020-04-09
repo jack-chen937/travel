@@ -6,7 +6,7 @@
         :key="item"
         :ref="item"
         @click="handleclick"
-        @touchstart="handlestart"
+        @touchstart.prevent="handlestart"
         @touchmove="handlemove"
         @touchend="handlend"
       >{{item}}</li>

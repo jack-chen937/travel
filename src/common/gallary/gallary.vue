@@ -2,7 +2,7 @@
   <div class="gallary" @click="close">
     <div class="container">
       <swiper :options="swiperOptions">
-        <swiper-slide v-for="(item,index) in swiperList" :key="index">
+        <swiper-slide v-for="(item,index) in gallaryImgs" :key="index">
           <img class="swiper-img" :src="item" />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
@@ -16,7 +16,7 @@ export default {
   name: "commonGallary",
   props: {
     gallaryflag: "",
-    swiperList: {
+    gallaryImgs: {
       type: Array,
       default() {
         return [];
@@ -54,6 +54,7 @@ export default {
 
 <style lang="stylus" scoped>
 .gallary {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +69,7 @@ export default {
 }
 
 .container {
-  overflow: hidden;
+  overflow hidden
   height: 0;
   width: 100%;
   // 高度容积整屏的页面大小
@@ -76,6 +77,7 @@ export default {
 }
 
 .swiper-img {
+  height: 4.2rem;
   width: 100%;
 }
 
