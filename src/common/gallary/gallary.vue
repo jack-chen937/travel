@@ -53,8 +53,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.gallary >>> .swiper-container {
+  overflow: inherit;
+}
+
 .gallary {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +72,6 @@ export default {
 }
 
 .container {
-  overflow hidden
   height: 0;
   width: 100%;
   // 高度容积整屏的页面大小
@@ -82,6 +84,7 @@ export default {
 }
 
 .swiper-pagination {
+  bottom: -50px;
   color: #fff;
 }
 </style>
